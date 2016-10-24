@@ -1,0 +1,38 @@
+---
+title: "Factor"
+output: html_notebook
+---
+
+## Factors
+
+```{r, include=FALSE}
+library(tidyverse)
+library(forcats)
+```
+
+### Factors Using Base Package
+
+```{r}
+# Code to build factor_survey_vector
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+```
+
+When reassigning levels of a factor, the order of factors matters. First exam
+the current order of the factor.
+
+```{r}
+factor_survey_vector
+```
+
+Notice that factor 'F' comes before 'M'. If the levels are not specified, R by 
+default orders them in alphabetical order. It's important the reassigned factors
+match the original order.
+
+```{r}
+levels(factor_survey_vector) <- c("Female", "Male")
+factor_survey_vector
+```
+
+### Factors Using 'forcats' Package
+
